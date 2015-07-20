@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>输入文字放大并格式化</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/fontmark.js"></script>
+</head>
+<style>
+	form{margin-top:20px;}
+	input[type='text']{display:inline-block;width:20%;height:30px; line-height:30px;text-indent:10px;}
+	.group{  display: inline-block;height:60px;line-height:60px;margin:2px 20px;width:100%;font-size:16pt;}	
+</style>
+<body>
+	<form action="">
+		<div class="group">银行卡：<input id="txtBank" type="text" /></div>
+		<div class="group">身份证：<input id="txtIdCard" type="text" /></div>
+		<div class="group">手机号：<input id="txtPhone" type="text" /></div>
+		<div class="group">默认值：<input id="txtDefault" type="text" /></div>
+	</form>
+</body>
+</html>
+<script>
+	$(function(){
+		$("#txtBank").fontMark({
+			ipttype:3
+		});
+		$("#txtIdCard").fontMark({
+			ipttype:1
+		});
+		$("#txtPhone").fontMark({
+			ipttype:2
+		});
+		//默认
+		//$("#txtDefault").fontMark();
+		
+		//设置分隔符
+		// $("#txtDefault").fontMark({
+		// 	separator:'-'
+		// });
+
+		//设置分隔符分隔位数
+		$("#txtDefault").fontMark({
+			separator:"-",
+			sepnum:"3"
+		});
+	});
+</script>
